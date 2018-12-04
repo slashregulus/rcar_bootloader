@@ -1,0 +1,11 @@
+1. source ./set_toolchain.sh
+2. make PLAT=rcar all
+
+Filename                        Program Top Address         Flash Save Address          Description
+    bootparam_sa0.srec              H'E6320000                  H'000000                    Loader(Boot parameter)
+    bl2-<board_name>.srec           H'E6304000                  H'040000                    Loader
+    cert_header_sa6.srec            H'E6320000                  H'180000                    Loader(Certification)
+    bl31-<board_name>.srec          H'44000000                  H'1C0000                    ARM Trusted Firmware
+    tee-<board_name>.srec           H'44100000                  H'200000                    OP-TEE
+    u-boot-elf-<board_name>.srec    H'50000000                  H'640000                    U-boot
+
