@@ -3782,6 +3782,7 @@ int32_t InitDram(void)
 	Judge board type
 	***********************************************************************/
 	_cnf_BOARDTYPE = boardcnf_get_brd_type();
+
 	if(_cnf_BOARDTYPE>=BOARDNUM){
 		FATAL_MSG("DDR:Unknown Board");
 		return 0xff;

@@ -9,10 +9,15 @@
  *	PLEASE DEFINE
  ******************************************************************************/
 #define BOARDNUM 16
+#define BIT25 (1<<25)
+#define BIT22 (1<<22)
+#define BIT15 (1<<15)
+#define BIT0  (1)
+
 /*******************************************************************************
  *	PLEASE SET board number or board judge function
  ******************************************************************************/
-#define BOARD_JUDGE_AUTO
+/* #define BOARD_JUDGE_AUTO */
 #ifdef BOARD_JUDGE_AUTO
 static uint32_t _board_judge(void);
 static uint32_t boardcnf_get_brd_type(void) {
@@ -20,7 +25,7 @@ static uint32_t boardcnf_get_brd_type(void) {
 }
 #else // BOARD_JUDGE_AUTO
 static uint32_t boardcnf_get_brd_type(void) {
-		return (1);
+		return (9);
 }
 #endif // BOARD_JUDGE_AUTO
 
@@ -1418,10 +1423,6 @@ static const uint32_t TermcodeBySample[20][3]= {
 /* R    32      General input register 6 */
 #define    GPIO_INDT6 0xE605540CU
 
-#define BIT25 (1<<25)
-#define BIT22 (1<<22)
-#define BIT15 (1<<15)
-#define BIT0  (1)
 #define    GPIO_GPSR6 0xE6060118U
 
 #if (RCAR_GEN3_ULCB==0)
